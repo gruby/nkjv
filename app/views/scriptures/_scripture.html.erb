@@ -1,0 +1,8 @@
+<div id="<%= dom_id scripture %>">
+  <p>
+    <%= scripture.word %>
+    <b>
+      <%= link_to "#{scripture.format_location}", scripture_path(scripture), :target => "_blank"  %>
+    </b>
+  </p>
+</div>

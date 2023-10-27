@@ -1,0 +1,14 @@
+<button autofocus onClick="window.location.reload();">Next one</button>
+<%= link_to "RANDOM", root_path, {:input => "autofocus"}%>
+
+<div id="scriptures">
+  <% @scriptures.each do |scripture| %>
+    <%= render scripture %>
+  <% end %>
+</div>
+<hr>
+<%= form_with(url: scriptures_path, method: "GET") do |form| %>
+  <%= form.label :query, "Search by:" %>
+  <%= form.text_field :query, autofocus: true %>
+  <%= form.submit 'Search', name: nil %>
+<% end %>
