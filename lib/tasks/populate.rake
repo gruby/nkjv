@@ -25,4 +25,4 @@
   #1.upto(20) do |t|
     #Item.create!(title: "Item number #{t}", status: ["ready", "ongoing", "notready"].sample)
   #end
-end
+#end
