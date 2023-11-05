@@ -1,5 +1,4 @@
-<button autofocus onClick="window.location.reload();">Next one</button>
-<%= link_to "RANDOM", root_path, {:input => "autofocus"}%>
+<%= button_to "Next Scripture", root_url, method: :get, autofocus: true%>
 
 <div id="scriptures">
   <% @scriptures.each do |scripture| %>
