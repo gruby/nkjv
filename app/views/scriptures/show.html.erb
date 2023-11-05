@@ -1,6 +1,13 @@
 <%= render @scripture %>
 
 <p>
+  <% if @scripture.previous_chapters_end %>
+    <%= link_to "Previous chapter", scripture_path(@scripture.previous_chapters_end)%>
+  <% end %>
+  <% if @scripture.next_chapters_start %>
+    <%= link_to "Next chapter", scripture_path(@scripture.next_chapters_start)%>
+  <% end %>
+  <br>
   <% @scriptures.each do |s| %>
     <span>
       <%=s.verse%>
