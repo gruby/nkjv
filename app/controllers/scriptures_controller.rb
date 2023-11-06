@@ -4,7 +4,11 @@ class ScripturesController < ApplicationController
   # GET /scriptures or /scriptures.json
   def index
     if params[:query].present?
-      @scriptures = Scripture.where("word LIKE ?", "%#{params[:query]}%").order(id: :asc)
+      if Scripture::BOOKS.include?(params[:query])
+        @scriptures = "jest wyszukiwanie :)"
+      else
+        @scriptures = Scripture.where("word LIKE ?", "%#{params[:query]}%").order(id: :asc)
+      end
     else
       @scriptures = Scripture.where("id = #{(1..31098).to_a.sample}")
     end
