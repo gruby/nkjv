@@ -5,7 +5,9 @@ class ScripturesController < ApplicationController
   def index
     if params[:query].present?
       if Scripture::BOOKS.include?(params[:query])
-        @scriptures = Scripture.where(["book = ? and chapter = ?", "Matthew", "1"])
+        f = Scripture.where(book: params[:query][1..-1]).minimum(:id)
+        l = Scripture.where(book: params[:query][1..-1]).maximum(:id)
+        @scriptures = Scripture.where("id = #{(f..l).to_a.sample}")
       else
         @scriptures = Scripture.where("word LIKE ?", "%#{params[:query]}%").order(id: :asc)
       end
