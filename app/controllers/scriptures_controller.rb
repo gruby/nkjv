@@ -5,7 +5,7 @@ class ScripturesController < ApplicationController
   def index
     if params[:query].present?
       if Scripture::BOOKS.include?(params[:query])
-        @scriptures = "jest wyszukiwanie :)"
+        @scriptures = ["jest wyszukiwanie :)", "Glory be to God!!"]
       else
         @scriptures = Scripture.where("word LIKE ?", "%#{params[:query]}%").order(id: :asc)
       end
