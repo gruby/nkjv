@@ -1,5 +1,5 @@
 class Scripture < ApplicationRecord
-  BOOKS = Scripture.all.pluck(:book).uniq
+  BOOKS = Scripture.all.pluck(:book).uniq.each {|b| "S" + b }
   
   def format_location
     "#{book} #{chapter}:#{verse}"
