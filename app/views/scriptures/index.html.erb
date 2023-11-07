@@ -1,4 +1,5 @@
 <%= button_to "Next Scripture", root_url, method: :get, autofocus: true%>
+<button onClick="history.go(0);">REPEAT</button>
 
 <div id="scriptures">
   <% @scriptures.each do |scripture| %>
@@ -13,5 +14,7 @@
 <% end %>
 
 <div>
-  <%= Scripture::BOOKS %>
+  <% Scripture::BOOKS.each do |s| %>
+    <%= link_to s[1..-1], "#{root_url}scriptures?query=#{s}" %>
+  <% end %>
 </div>
