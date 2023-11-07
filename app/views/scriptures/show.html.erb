@@ -1,3 +1,11 @@
+<div>
+  <%= link_to "Home", root_url %>
+  <br>
+  <%= "#{@scripture.book}:" %>
+  <% @scripture.chapters_in_book_of_scripture.each do |l| %>
+    <%= link_to_unless_current l, scripture_path(first_scripture_in_chapther(@scripture.book, l)) %>
+  <% end %>
+</div>
 <%= render @scripture %>
 
 <p>

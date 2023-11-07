@@ -1,5 +1,9 @@
-<%= button_to "Next Scripture", root_url, method: :get, autofocus: true%>
-<button onClick="history.go(0);">REPEAT</button>
+<%= button_to "Next Random Scripture", root_url, method: :get, autofocus: true%>
+<% if params[:query] %>
+  <% if Scripture::BOOKS.include?(params[:query]) %>
+    <button onClick="history.go(0);"><%= "Random from #{params[:query][1..-1]}"%></button>
+  <% end %>
+<% end %>
 
 <div id="scriptures">
   <% @scriptures.each do |scripture| %>
