@@ -14,12 +14,15 @@
 
 <p>
   <% if @scripture.previous_chapters_end %>
-    <%= link_to "Previous chapter", scripture_path(@scripture.previous_chapters_end)%>
+    <%= link_to "#{@scripture.previous_chapters_end[1]}", scripture_path(@scripture.previous_chapters_end[0]), {:style=>"font-size:15px;"} %>
   <% end %>
+  <strong>
+    <%= "| #{@scripture.book}:#{@scripture.chapter} |" %>
+  </strong>
   <% if @scripture.next_chapters_start %>
-    <%= link_to "Next chapter", scripture_path(@scripture.next_chapters_start)%>
+    <%= link_to "#{@scripture.next_chapters_start[1]}", scripture_path(@scripture.next_chapters_start[0]), {:style=>"font-size:15px;"} %>
   <% end %>
-  <br>
+  <br><br>
   <% @scriptures.each do |s| %>
     <span>
       <%=s.verse%>
@@ -27,10 +30,14 @@
     <%=s.word%>
     <br>
   <% end %>
+  <br>
   <% if @scripture.previous_chapters_end %>
-    <%= link_to "Previous chapter", scripture_path(@scripture.previous_chapters_end)%>
+    <%= link_to "#{@scripture.previous_chapters_end[1]}", scripture_path(@scripture.previous_chapters_end[0]), {:style=>"font-size:15px;"} %>
   <% end %>
+  <strong>
+    <%= "| #{@scripture.book}:#{@scripture.chapter} |" %>
+  </strong>
   <% if @scripture.next_chapters_start %>
-    <%= link_to "Next chapter", scripture_path(@scripture.next_chapters_start)%>
+    <%= link_to "#{@scripture.next_chapters_start[1]}", scripture_path(@scripture.next_chapters_start[0]), {:style=>"font-size:15px;"} %>
   <% end %>
 </p>
