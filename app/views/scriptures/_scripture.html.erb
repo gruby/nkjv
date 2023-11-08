@@ -1,8 +1,12 @@
 <div id="<%= dom_id scripture %>">
   <p>
     <%= scripture.word %>
-    <b>
-      <%= link_to "#{scripture.format_location}", scripture_path(scripture) %>
-    </b>
+      <b>
+        <% if params[:action] == 'index' %>      
+          <%= link_to "#{scripture.format_location}", scripture_path(scripture) %>
+        <% else %>
+          <%= "#{scripture.format_location}" %>
+        <% end %>
+      </b>
   </p>
 </div>

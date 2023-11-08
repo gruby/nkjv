@@ -10,7 +10,14 @@
     <%= render scripture %>
   <% end %>
 </div>
-<hr>
+
+<div>
+  Random scripture from:
+  <% Scripture::BOOKS.each do |s| %>
+    <%= link_to s[1..-1], "#{root_url}scriptures?query=#{s}" %>
+  <% end %>
+</div>
+
 <%= form_with(url: scriptures_path, method: "GET") do |form| %>
   <%= form.label :query, "Search by:" %>
   <%= form.text_field :query, autofocus: true %>
@@ -18,7 +25,8 @@
 <% end %>
 
 <div>
+  Go to: 
   <% Scripture::BOOKS.each do |s| %>
-    <%= link_to s[1..-1], "#{root_url}scriptures?query=#{s}" %>
+    <%= link_to s[1..-1], scripture_path(first_scripture_in_book(s[1..-1])) %>
   <% end %>
 </div>
