@@ -5,6 +5,14 @@ p {
   background-color: rgb(206, 232, 255);
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: maroon;
+}
+
 span {
   vertical-align: super;
   font-size: 15px;
