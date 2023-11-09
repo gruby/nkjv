@@ -11,13 +11,6 @@
   <% end %>
 </div>
 
-<div>
-  Random scripture from:
-  <% Scripture::BOOKS.each do |s| %>
-    <%= link_to s[1..-1], "#{root_url}scriptures?query=#{s}" %>
-  <% end %>
-</div>
-
 <%= form_with(url: scriptures_path, method: "GET") do |form| %>
   <%= form.label :query, "Search by:" %>
   <%= form.text_field :query, autofocus: true %>
@@ -25,8 +18,141 @@
 <% end %>
 
 <div>
+  Random scripture from:
+  <a href="/scriptures?query=SGenesis">Genesis</a>
+  <a href="/scriptures?query=SExodus">Exodus</a>
+  <a href="/scriptures?query=SLeviticus">Leviticus</a>
+  <a href="/scriptures?query=SNumbers">Numbers</a>
+  <a href="/scriptures?query=SDeuteronomy">Deuteronomy</a>
+  <a href="/scriptures?query=SJoshua">Joshua</a>
+  <a href="/scriptures?query=SJudges">Judges</a>
+  <a href="/scriptures?query=SRuth">Ruth</a>
+  <a href="/scriptures?query=S1 Samuel">1 Samuel</a>
+  <a href="/scriptures?query=S2 Samuel">2 Samuel</a>
+  <a href="/scriptures?query=S1 Kings">1 Kings</a>
+  <a href="/scriptures?query=S2 Kings">2 Kings</a>
+  <a href="/scriptures?query=S1 Chronicles">1 Chronicles</a>
+  <a href="/scriptures?query=S2 Chronicles">2 Chronicles</a>
+  <a href="/scriptures?query=SEzra">Ezra</a>
+  <a href="/scriptures?query=SNehemiah">Nehemiah</a>
+  <a href="/scriptures?query=SEsther">Esther</a>
+  <a href="/scriptures?query=SJob">Job</a>
+  <a href="/scriptures?query=SPsalm">Psalm</a>
+  <a href="/scriptures?query=SProverbs">Proverbs</a>
+  <a href="/scriptures?query=SEcclesiastes">Ecclesiastes</a>
+  <a href="/scriptures?query=SSong of Solomon">Song of Solomon</a>
+  <a href="/scriptures?query=SIsaiah">Isaiah</a>
+  <a href="/scriptures?query=SJeremiah">Jeremiah</a>
+  <a href="/scriptures?query=SLamentations">Lamentations</a>
+  <a href="/scriptures?query=SEzekiel">Ezekiel</a>
+  <a href="/scriptures?query=SDaniel">Daniel</a>
+  <a href="/scriptures?query=SHosea">Hosea</a>
+  <a href="/scriptures?query=SJoel">Joel</a>
+  <a href="/scriptures?query=SAmos">Amos</a>
+  <a href="/scriptures?query=SObadiah">Obadiah</a>
+  <a href="/scriptures?query=SJonah">Jonah</a>
+  <a href="/scriptures?query=SMicah">Micah</a>
+  <a href="/scriptures?query=SNahum">Nahum</a>
+  <a href="/scriptures?query=SHabakkuk">Habakkuk</a>
+  <a href="/scriptures?query=SZephaniah">Zephaniah</a>
+  <a href="/scriptures?query=SHaggai">Haggai</a>
+  <a href="/scriptures?query=SZechariah">Zechariah</a>
+  <a href="/scriptures?query=SMalachi">Malachi</a>
+  <a href="/scriptures?query=SMatthew">Matthew</a>
+  <a href="/scriptures?query=SMark">Mark</a>
+  <a href="/scriptures?query=SLuke">Luke</a>
+  <a href="/scriptures?query=SJohn">John</a>
+  <a href="/scriptures?query=SActs">Acts</a>
+  <a href="/scriptures?query=SRomans">Romans</a>
+  <a href="/scriptures?query=S1 Corinthians">1 Corinthians</a>
+  <a href="/scriptures?query=S2 Corinthians">2 Corinthians</a>
+  <a href="/scriptures?query=SGalatians">Galatians</a>
+  <a href="/scriptures?query=SEphesians">Ephesians</a>
+  <a href="/scriptures?query=SPhilippians">Philippians</a>
+  <a href="/scriptures?query=SColossians">Colossians</a>
+  <a href="/scriptures?query=S1 Thessalonians">1 Thessalonians</a>
+  <a href="/scriptures?query=S2 Thessalonians">2 Thessalonians</a>
+  <a href="/scriptures?query=S1 Timothy">1 Timothy</a>
+  <a href="/scriptures?query=S2 Timothy">2 Timothy</a>
+  <a href="/scriptures?query=STitus">Titus</a>
+  <a href="/scriptures?query=SPhilemon">Philemon</a>
+  <a href="/scriptures?query=SHebrews">Hebrews</a>
+  <a href="/scriptures?query=SJames">James</a>
+  <a href="/scriptures?query=S1 Peter">1 Peter</a>
+  <a href="/scriptures?query=S2 Peter">2 Peter</a>
+  <a href="/scriptures?query=S1 John">1 John</a>
+  <a href="/scriptures?query=S2 John">2 John</a>
+  <a href="/scriptures?query=S3 John">3 John</a>
+  <a href="/scriptures?query=SJude">Jude</a>
+  <a href="/scriptures?query=SRevelation">Revelation</a>
+</div>
+<br>
+<div>
   Go to: 
-  <% Scripture::BOOKS.each do |s| %>
-    <%= link_to s[1..-1], scripture_path(first_scripture_in_book(s[1..-1])) %>
-  <% end %>
+  <a href="/scriptures/1">Genesis</a>
+  <a href="/scriptures/1534">Exodus</a>
+  <a href="/scriptures/2747">Leviticus</a>
+  <a href="/scriptures/3606">Numbers</a>
+  <a href="/scriptures/4894">Deuteronomy</a>
+  <a href="/scriptures/5853">Joshua</a>
+  <a href="/scriptures/6511">Judges</a>
+  <a href="/scriptures/7129">Ruth</a>
+  <a href="/scriptures/7214">1 Samuel</a>
+  <a href="/scriptures/8024">2 Samuel</a>
+  <a href="/scriptures/8719">1 Kings</a>
+  <a href="/scriptures/9535">2 Kings</a>
+  <a href="/scriptures/10254">1 Chronicles</a>
+  <a href="/scriptures/11196">2 Chronicles</a>
+  <a href="/scriptures/12018">Ezra</a>
+  <a href="/scriptures/12298">Nehemiah</a>
+  <a href="/scriptures/12704">Esther</a>
+  <a href="/scriptures/12871">Job</a>
+  <a href="/scriptures/13941">Psalm</a>
+  <a href="/scriptures/16402">Proverbs</a>
+  <a href="/scriptures/17317">Ecclesiastes</a>
+  <a href="/scriptures/17539">Song of Solomon</a>
+  <a href="/scriptures/17656">Isaiah</a>
+  <a href="/scriptures/18945">Jeremiah</a>
+  <a href="/scriptures/20309">Lamentations</a>
+  <a href="/scriptures/20463">Ezekiel</a>
+  <a href="/scriptures/21736">Daniel</a>
+  <a href="/scriptures/22093">Hosea</a>
+  <a href="/scriptures/22290">Joel</a>
+  <a href="/scriptures/22363">Amos</a>
+  <a href="/scriptures/22509">Obadiah</a>
+  <a href="/scriptures/22530">Jonah</a>
+  <a href="/scriptures/22578">Micah</a>
+  <a href="/scriptures/22683">Nahum</a>
+  <a href="/scriptures/22730">Habakkuk</a>
+  <a href="/scriptures/22786">Zephaniah</a>
+  <a href="/scriptures/22839">Haggai</a>
+  <a href="/scriptures/22877">Zechariah</a>
+  <a href="/scriptures/23088">Malachi</a>
+  <a href="/scriptures/23143">Matthew</a>
+  <a href="/scriptures/24213">Mark</a>
+  <a href="/scriptures/24891">Luke</a>
+  <a href="/scriptures/26042">John</a>
+  <a href="/scriptures/26921">Acts</a>
+  <a href="/scriptures/27928">Romans</a>
+  <a href="/scriptures/28361">1 Corinthians</a>
+  <a href="/scriptures/28798">2 Corinthians</a>
+  <a href="/scriptures/29055">Galatians</a>
+  <a href="/scriptures/29204">Ephesians</a>
+  <a href="/scriptures/29359">Philippians</a>
+  <a href="/scriptures/29463">Colossians</a>
+  <a href="/scriptures/29558">1 Thessalonians</a>
+  <a href="/scriptures/29647">2 Thessalonians</a>
+  <a href="/scriptures/29694">1 Timothy</a>
+  <a href="/scriptures/29807">2 Timothy</a>
+  <a href="/scriptures/29890">Titus</a>
+  <a href="/scriptures/29936">Philemon</a>
+  <a href="/scriptures/29961">Hebrews</a>
+  <a href="/scriptures/30264">James</a>
+  <a href="/scriptures/30372">1 Peter</a>
+  <a href="/scriptures/30477">2 Peter</a>
+  <a href="/scriptures/30538">1 John</a>
+  <a href="/scriptures/30643">2 John</a>
+  <a href="/scriptures/30656">3 John</a>
+  <a href="/scriptures/30670">Jude</a>
+  <a href="/scriptures/30695">Revelation</a>
 </div>
