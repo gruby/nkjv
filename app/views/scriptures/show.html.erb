@@ -2,11 +2,14 @@
   <%= link_to "Home", root_url %>
   <br>
   <%= "#{@scripture.book}:" %>
-  <% @scripture.chapters_in_book_of_scripture.each do |l| %>
-    <% unless @scripture.chapter == l %>
-      <%= link_to_unless_current l, scripture_path(first_scripture_in_chapther(@scripture.book, l)) %>
+  <%# @scripture.chapters_in_book_of_scripture.each do |l| %>
+  <% Scripture::NAV[@scripture.book].each do |l| %>
+    <% unless @scripture.chapter == l[0] %>
+      <%= link_to l[0], scripture_path(l[1]) %>
     <% else %>
-      <strong><%= l %></strong>
+      <strong>
+        <%= l[0] %>
+      </strong>
     <% end %>
   <% end %>
 </div>

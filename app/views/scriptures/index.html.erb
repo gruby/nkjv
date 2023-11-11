@@ -1,5 +1,5 @@
 <% if params[:query] %>
-  <% if Scripture::BOOKS.include?(params[:query]) %>
+  <% if Scripture::SEARCHBOOKS.include?(params[:query]) %>
     <button onClick="history.go(0);" autofocus><%= "Random from #{params[:query][1..-1]}"%></button>
   <% end %>
 <% end %>
