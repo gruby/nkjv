@@ -1,7 +1,7 @@
 <div>
   <%= link_to "Home", root_url %>
   <br>
-  <%= "#{@scripture.book}:" %>
+  <%= link_to "#{@scripture.book}", (root_url + "/scriptures?query=S#{@scripture.book}") %>
   <%# @scripture.chapters_in_book_of_scripture.each do |l| %>
   <% Scripture::NAV[@scripture.book].each do |l| %>
     <% unless @scripture.chapter == l[0] %>
